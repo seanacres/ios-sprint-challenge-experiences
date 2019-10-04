@@ -4,7 +4,7 @@
 
 **Please read this entire README to make sure you understand what is expected of you before you begin.**
 
-This sprint challenge is designed to ensure that you are competent with the concepts taught throughout Sprint 13, Media Programming.
+This sprint challenge is designed to ensure that you are competent with the concepts taught throughout Media Programming.
 
 Begin by forking this repository. Clone your forked repository to your machine. There is no starter project. Create a project for this challenge in this repository and commit as appropriate while you work. Push your final project to GitHub, then create a pull request back to this original repository.
 
