@@ -33,8 +33,9 @@ The requirements for this project are as follows:
       2. A map view controller that adds an annotation for each experience created. Simply show the title of the experience on the annotation.
       3. The location can either be the user's current location or you may let them select a location however you choose to implement it (`MKLocalSearch`, pin dropping, etc).
 4. You are welcome to add any other properties and methods you wish in the model object.
-5. A straightforward UI similar to the screen recording (Experiences Screen Recording.MP4) that lets a user create an experience with an image, video, audio, and location. 
-6. The image must be filtered in some way. In the screen recording example, it desaturates the image after the user picks an image from their photo library. 
+5. MVP UI can be similar to the screen recording (Experiences Screen Recording.MP4) that lets a user create an experience with an image, video, audio, and location. 
+6. Use the inspiration below for guidance on a UI design that is already tested and easy to use.
+7. The image must be filtered in some way. In the screen recording example, it desaturates the image after the user picks an image from their photo library. 
       1. You can add a image edit button to allow the user to use different photo filters
 
 ## Inspiration
