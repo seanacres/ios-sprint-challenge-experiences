@@ -10,11 +10,11 @@ Begin by forking this repository. Clone your forked repository to your machine. 
 
 **You will have 3 hours to complete this sprint challenge**
 
-If you have any questions about the project requirements or expectations, ask your PM or instructor. Good luck!
+If you have any questions about the project requirements or expectations, ask your TL or instructor. Good luck!
 
 ## Screen Recording
 
-**The screen recording is a video file included in the repo. Watch it to know how the project should function**
+**The screen recording is a video file included in the repo. Watch it to know how the project should function.**
 
 ## Requirements
 
@@ -22,12 +22,12 @@ The goal of this sprint challenge is to create an app that helps the user create
 
 The requirements for this project are as follows:
 
-1. At least one model object that represents an experience. You must be able to create experiences that can included:
+1. At least one model object that represents an experience. You must be able to create experiences that can include:
       - An audio recording
       - A video recording
       - An image
       - Title and/or description
-2. Not every experience will use all types of media, you decide on the best way to create an experience. Evernote has a special `+` button for adding photos, video, and audio recordings to documents.
+2. Not every experience will use all types of media, you decide on the best way to create an experience. Evernote has a special `+` button for adding photos, videos, and audio recordings to documents.
 3. The experience must be geotagged so that the user can see on a map where the experience happened.
       1. One experience model object must conform to the `MKAnnotation` protocol. 
       2. A map view controller that adds an annotation for each experience created. Simply show the title of the experience on the annotation.
@@ -36,7 +36,7 @@ The requirements for this project are as follows:
 5. MVP UI can be similar to the screen recording (Experiences Screen Recording.MP4) that lets a user create an experience with an image, video, audio, and location. 
 6. Use the inspiration below for guidance on a UI design that is already tested and easy to use.
 7. The image must be filtered in some way. In the screen recording example, it desaturates the image after the user picks an image from their photo library. 
-      1. You can add a image edit button to allow the user to use different photo filters
+      1. You can add a image edit button to allow the user to use different photo filters.
 
 ## Inspiration
 
@@ -50,4 +50,4 @@ The requirements for this project are as follows:
 
 * Add a custom callout view to the annotations that shows either the image, video, a way to play the experience's audio, or a combination of the three.
 * Persist the experiences using Core Data or Firebase (either using the SDK or just as a REST API).
-* Add an image editor screen to choose between 3-5 different editing tools
+* Add an image editor screen to choose between 3-5 different editing tools.
