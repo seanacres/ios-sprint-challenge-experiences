@@ -24,9 +24,9 @@ The requirements for this project are as follows:
 
 1. At least one model object that represents an experience. You must be able to create experiences that can include:
       - An audio recording
-      - A video recording
       - An image
       - Title and/or description
+      - Stretch (optional): A video recording
 2. Not every experience will use all types of media, you decide on the best way to create an experience. Evernote has a special `+` button for adding photos, videos, and audio recordings to documents.
 3. The experience must be geotagged so that the user can see on a map where the experience happened.
       1. One experience model object must conform to the `MKAnnotation` protocol. 
@@ -47,7 +47,7 @@ The requirements for this project are as follows:
 * [Instagram](https://apps.apple.com/us/app/instagram/id389801252)'s photo editor
 
 ## Go Further
-
+* Add in video capture and playback
 * Add a custom callout view to the annotations that shows either the image, video, a way to play the experience's audio, or a combination of the three.
 * Persist the experiences using Core Data or Firebase (either using the SDK or just as a REST API).
 * Add an image editor screen to choose between 3-5 different editing tools.
