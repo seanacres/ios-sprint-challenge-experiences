@@ -23,9 +23,9 @@ The goal of this sprint challenge is to create an app that helps the user create
 The requirements for this project are as follows:
 
 1. At least one model object that represents an experience. You must be able to create experiences that can include:
-      - An audio recording
-      - An image
       - Title and/or description
+      - An image
+      - An audio recording
       - Stretch (optional): A video recording
 2. Not every experience will use all types of media, you decide on the best way to create an experience. Evernote has a special `+` button for adding photos, videos, and audio recordings to documents.
 3. The experience must be geotagged so that the user can see on a map where the experience happened.
