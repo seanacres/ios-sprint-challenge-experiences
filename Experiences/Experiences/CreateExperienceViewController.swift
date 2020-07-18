@@ -17,7 +17,37 @@ class CreateExperienceViewController: UIViewController {
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var recordAudioButton: UIButton!
     
-    var originalImage: UIImage?
+    var originalImage: UIImage? {
+        didSet {
+            guard let originalImage = originalImage else {
+                scaledImage = nil
+                return
+            }
+            
+            var scaledSize = imageView.bounds.size
+            let scale = UIScreen.main.scale
+            
+            scaledSize = CGSize(width: scaledSize.width * scale, height: scaledSize.height * scale)
+            
+            guard let scaledUIImage = originalImage.imageByScaling(toSize: scaledSize) else {
+                scaledImage = nil
+                return
+            }
+            
+            scaledImage = CIImage(image: scaledUIImage)
+        }
+    }
+    
+    var scaledImage: CIImage? {
+        didSet {
+            updateImage()
+        }
+    }
+    
+    var outputImage: CIImage?
+    
+    private let context = CIContext()
+    private let bloomFilter = CIFilter.bloom()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +68,27 @@ class CreateExperienceViewController: UIViewController {
         imagePicker.delegate = self
         
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func image(byFiltering inputImage: CIImage) -> UIImage? {
+        bloomFilter.inputImage = inputImage
+        bloomFilter.radius = 90
+        outputImage = bloomFilter.outputImage
+        
+        guard let outputImage = outputImage else { return nil }
+        guard let renderedCGImage = context.createCGImage(outputImage, from: inputImage.extent) else { return nil }
+        
+        return UIImage(cgImage: renderedCGImage)
+    }
+    
+    private func updateImage() {
+        if let scaledImage = scaledImage {
+            imageView.image = image(byFiltering: scaledImage)
+        } else {
+            imageView.image = nil
+        }
+        
+        addPhotoButton.isHidden = true
     }
     
 
