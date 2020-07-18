@@ -14,6 +14,7 @@
 		66F731B824C3550A009FF9C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F731B624C3550A009FF9C3 /* LaunchScreen.storyboard */; };
 		66F731C024C35785009FF9C3 /* ExperienceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F731BF24C35785009FF9C3 /* ExperienceMapViewController.swift */; };
 		66F731C224C35799009FF9C3 /* CreateExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F731C124C35799009FF9C3 /* CreateExperienceViewController.swift */; };
+		66F731C424C358DE009FF9C3 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F731C324C358DE009FF9C3 /* Experience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		66F731B924C3550A009FF9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66F731BF24C35785009FF9C3 /* ExperienceMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceMapViewController.swift; sourceTree = "<group>"; };
 		66F731C124C35799009FF9C3 /* CreateExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExperienceViewController.swift; sourceTree = "<group>"; };
+		66F731C324C358DE009FF9C3 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,12 @@
 			children = (
 				66F731AB24C35508009FF9C3 /* AppDelegate.swift */,
 				66F731AD24C35508009FF9C3 /* SceneDelegate.swift */,
+				66F731C324C358DE009FF9C3 /* Experience.swift */,
 				66F731BF24C35785009FF9C3 /* ExperienceMapViewController.swift */,
 				66F731C124C35799009FF9C3 /* CreateExperienceViewController.swift */,
 				66F731B124C35508009FF9C3 /* Main.storyboard */,
-				66F731B424C3550A009FF9C3 /* Assets.xcassets */,
 				66F731B624C3550A009FF9C3 /* LaunchScreen.storyboard */,
+				66F731B424C3550A009FF9C3 /* Assets.xcassets */,
 				66F731B924C3550A009FF9C3 /* Info.plist */,
 			);
 			path = Experiences;
@@ -144,6 +147,7 @@
 				66F731AC24C35508009FF9C3 /* AppDelegate.swift in Sources */,
 				66F731C024C35785009FF9C3 /* ExperienceMapViewController.swift in Sources */,
 				66F731C224C35799009FF9C3 /* CreateExperienceViewController.swift in Sources */,
+				66F731C424C358DE009FF9C3 /* Experience.swift in Sources */,
 				66F731AE24C35508009FF9C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
