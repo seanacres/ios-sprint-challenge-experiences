@@ -217,6 +217,8 @@ class CreateExperienceViewController: UIViewController {
         guard let userLocation = locationManager?.location?.coordinate else { return }
         
         let experience = Experience(title: titleText, image: originalImage, audioRecording: recordingURL, latitude: userLocation.latitude, longitude: userLocation.longitude)
+        
+        destinationVC.experiences.append(experience)
     }
 
     

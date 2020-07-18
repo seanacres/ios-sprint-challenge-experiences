@@ -21,6 +21,22 @@ class ExperienceMapViewController: UIViewController {
     
     private let locationManager = CLLocationManager()
     
+    var experiences: [Experience] = [] {
+        didSet {
+            let oldExperiences = Set(oldValue)
+            let newExperiences = Set(experiences)
+            
+            let addedExperiences = Array(newExperiences.subtracting(oldExperiences))
+            let removedExperiences = Array(oldExperiences.subtracting(newExperiences))
+            
+//            print(experiences.count)
+//            print(addedExperiences.count)
+//            print(removedExperiences.count)
+            mapView.addAnnotations(addedExperiences)
+            mapView.removeAnnotations(removedExperiences)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,5 +68,18 @@ class ExperienceMapViewController: UIViewController {
     @IBAction func unwind(_ seg: UIStoryboardSegue) {
         
     }
+}
 
+extension ExperienceMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let experience = annotation as? Experience else { return nil }
+        
+        guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: .annotationReuseIdentifier, for: experience) as? MKMarkerAnnotationView else {
+            preconditionFailure("Missing the registered map annotation view")
+        }
+        
+        annotationView.markerTintColor = .systemBlue
+        
+        return annotationView
+    }
 }
