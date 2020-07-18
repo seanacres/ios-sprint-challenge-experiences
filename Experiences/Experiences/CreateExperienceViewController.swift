@@ -214,8 +214,9 @@ class CreateExperienceViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? ExperienceMapViewController else { return }
         guard let titleText = experienceTitleTextField.text else { return }
+        guard let userLocation = locationManager?.location?.coordinate else { return }
         
-        let experience = Experience(title: titleText, image: originalImage, audioRecording: recordingURL, latitude: 0, longitude: 0)
+        let experience = Experience(title: titleText, image: originalImage, audioRecording: recordingURL, latitude: userLocation.latitude, longitude: userLocation.longitude)
     }
 
     
@@ -265,3 +266,4 @@ extension CreateExperienceViewController: AVAudioRecorderDelegate {
         }
     }
 }
+
