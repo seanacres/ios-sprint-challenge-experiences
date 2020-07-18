@@ -22,7 +22,7 @@
                                 <rect key="frame" x="252" y="812" width="142" height="30"/>
                                 <state key="normal" title="Add New Experience"/>
                                 <connections>
-                                    <segue destination="Uml-fU-2yA" kind="show" id="59E-q1-N0Z"/>
+                                    <segue destination="Uml-fU-2yA" kind="presentation" id="59E-q1-N0Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -51,38 +51,46 @@
             <objects>
                 <viewController id="Uml-fU-2yA" customClass="CreateExperienceViewController" customModule="Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vKJ-4w-XnJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1KD-TR-rXO">
-                                <rect key="frame" x="20" y="148" width="374" height="34"/>
+                                <rect key="frame" x="20" y="60" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="saR-rV-Lg4">
-                                <rect key="frame" x="0.0" y="223" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="saR-rV-Lg4" secondAttribute="height" multiplier="1:1" id="4Es-bR-s49"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odg-B8-l6H">
-                                <rect key="frame" x="171" y="681" width="72" height="30"/>
+                                <rect key="frame" x="171" y="593" width="72" height="30"/>
                                 <state key="normal" title="Add Photo"/>
                                 <connections>
                                     <action selector="addPhotoTapped:" destination="Uml-fU-2yA" eventType="touchUpInside" id="9Vi-Hr-tOf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4U-OG-YhQ">
-                                <rect key="frame" x="161" y="752.5" width="92" height="22"/>
+                                <rect key="frame" x="161" y="664.5" width="92" height="22"/>
                                 <state key="normal" image="mic.fill" catalog="system"/>
                                 <state key="selected" image="stop.fill" catalog="system"/>
                                 <connections>
                                     <action selector="recordAudioTapped:" destination="Uml-fU-2yA" eventType="touchUpInside" id="mS3-oE-uVa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfy-ba-1zc">
+                                <rect key="frame" x="360" y="778" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <segue destination="gtE-dP-bHt" kind="unwind" identifier="unwindToMap" unwindAction="unwind:" id="bU1-Cx-NrX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="sfy-ba-1zc" firstAttribute="bottom" secondItem="7ip-7a-ZjV" secondAttribute="bottom" id="5DG-E9-xwr"/>
                             <constraint firstItem="7ip-7a-ZjV" firstAttribute="trailing" secondItem="1KD-TR-rXO" secondAttribute="trailing" constant="20" id="Feu-0l-RwG"/>
                             <constraint firstItem="saR-rV-Lg4" firstAttribute="top" secondItem="1KD-TR-rXO" secondAttribute="bottom" constant="41" id="OUh-Fh-mrv"/>
                             <constraint firstItem="saR-rV-Lg4" firstAttribute="centerX" secondItem="1KD-TR-rXO" secondAttribute="centerX" id="XaY-r3-3ks"/>
@@ -91,19 +99,14 @@
                             <constraint firstItem="1KD-TR-rXO" firstAttribute="top" secondItem="7ip-7a-ZjV" secondAttribute="top" constant="60" id="bRx-fy-95p"/>
                             <constraint firstItem="1KD-TR-rXO" firstAttribute="leading" secondItem="7ip-7a-ZjV" secondAttribute="leading" constant="20" id="g3F-a0-7YP"/>
                             <constraint firstItem="u4U-OG-YhQ" firstAttribute="leading" secondItem="7ip-7a-ZjV" secondAttribute="leading" constant="161" id="iJT-uV-s2p"/>
+                            <constraint firstItem="sfy-ba-1zc" firstAttribute="trailing" secondItem="1KD-TR-rXO" secondAttribute="trailing" id="r1U-VF-0Sx"/>
                             <constraint firstItem="7ip-7a-ZjV" firstAttribute="trailing" secondItem="u4U-OG-YhQ" secondAttribute="trailing" constant="161" id="tXe-Xg-npz"/>
                             <constraint firstItem="odg-B8-l6H" firstAttribute="top" secondItem="saR-rV-Lg4" secondAttribute="bottom" constant="44" id="u85-m1-Bpb"/>
                             <constraint firstItem="saR-rV-Lg4" firstAttribute="centerX" secondItem="odg-B8-l6H" secondAttribute="centerX" id="vZA-qb-Cpq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7ip-7a-ZjV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JTC-F8-bY3">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="g0F-EW-kxs">
-                            <connections>
-                                <action selector="saveTapped:" destination="Uml-fU-2yA" id="y8s-rQ-HiY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="JTC-F8-bY3"/>
                     <connections>
                         <outlet property="addPhotoButton" destination="odg-B8-l6H" id="OHQ-eR-TjH"/>
                         <outlet property="experienceTitleTextField" destination="1KD-TR-rXO" id="8jw-Kl-NSU"/>
@@ -112,6 +115,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Me-3b-3pW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gtE-dP-bHt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2229" y="129"/>
         </scene>

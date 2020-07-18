@@ -10,6 +10,7 @@ import UIKit
 import CoreImage
 import CoreImage.CIFilterBuiltins
 import AVFoundation
+import MapKit
 
 class CreateExperienceViewController: UIViewController {
 
@@ -22,7 +23,7 @@ class CreateExperienceViewController: UIViewController {
     
     var recordingURL: URL?
     var audioRecorder: AVAudioRecorder?
-    
+    var locationManager: CLLocationManager?
     
     var originalImage: UIImage? {
         didSet {
@@ -59,7 +60,7 @@ class CreateExperienceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
     func updateViews() {
@@ -207,15 +208,16 @@ class CreateExperienceViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let destinationVC = segue.destination as? ExperienceMapViewController else { return }
+        guard let titleText = experienceTitleTextField.text else { return }
+        
+        let experience = Experience(title: titleText, image: originalImage, audioRecording: recordingURL, latitude: 0, longitude: 0)
     }
-    */
+
     
     @IBAction func addPhotoTapped(_ sender: Any) {
         presentImagePickerController()
@@ -230,9 +232,8 @@ class CreateExperienceViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        guard let titleText = experienceTitleTextField.text else { return }
+        performSegue(withIdentifier: "unwindToMap", sender: self)
         
-        let experience = Experience(title: titleText, image: originalImage, audioRecording: nil, latitude: 0, longitude: 0)
     }
 }
 
