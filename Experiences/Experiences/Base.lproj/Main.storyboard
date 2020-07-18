@@ -72,9 +72,10 @@
                                     <action selector="addPhotoTapped:" destination="Uml-fU-2yA" eventType="touchUpInside" id="9Vi-Hr-tOf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4U-OG-YhQ">
-                                <rect key="frame" x="161" y="749" width="92" height="30"/>
-                                <state key="normal" title="Record Audio"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4U-OG-YhQ">
+                                <rect key="frame" x="161" y="752.5" width="92" height="22"/>
+                                <state key="normal" image="mic.fill" catalog="system"/>
+                                <state key="selected" image="stop.fill" catalog="system"/>
                                 <connections>
                                     <action selector="recordAudioTapped:" destination="Uml-fU-2yA" eventType="touchUpInside" id="mS3-oE-uVa"/>
                                 </connections>
@@ -133,4 +134,8 @@
             <point key="canvasLocation" x="505.79710144927537" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mic.fill" catalog="system" width="108" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
