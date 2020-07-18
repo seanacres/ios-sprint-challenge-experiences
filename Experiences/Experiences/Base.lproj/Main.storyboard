@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Experience Map View Controller-->
         <scene sceneID="oQe-PS-8Zs">
             <objects>
-                <viewController id="LQb-Ka-229" sceneMemberID="viewController">
+                <viewController id="LQb-Ka-229" customClass="ExperienceMapViewController" customModule="Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zTZ-o1-LMY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,15 +38,18 @@
                         <viewLayoutGuide key="safeArea" id="8L7-0o-wUs"/>
                     </view>
                     <navigationItem key="navigationItem" id="uRd-dd-B7O"/>
+                    <connections>
+                        <outlet property="mapView" destination="iOt-DI-4rB" id="v1e-C8-wxW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duT-ao-MKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414.4927536231885" y="128.57142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Experience View Controller-->
         <scene sceneID="M1A-of-rVH">
             <objects>
-                <viewController id="Uml-fU-2yA" sceneMemberID="viewController">
+                <viewController id="Uml-fU-2yA" customClass="CreateExperienceViewController" customModule="Experiences" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vKJ-4w-XnJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,10 +68,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odg-B8-l6H">
                                 <rect key="frame" x="171" y="681" width="72" height="30"/>
                                 <state key="normal" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoTapped:" destination="Uml-fU-2yA" eventType="touchUpInside" id="9Vi-Hr-tOf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4U-OG-YhQ">
                                 <rect key="frame" x="161" y="749" width="92" height="30"/>
                                 <state key="normal" title="Record Audio"/>
+                                <connections>
+                                    <action selector="recordAudioTapped:" destination="Uml-fU-2yA" eventType="touchUpInside" id="mS3-oE-uVa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -88,12 +97,22 @@
                         <viewLayoutGuide key="safeArea" id="7ip-7a-ZjV"/>
                     </view>
                     <navigationItem key="navigationItem" id="JTC-F8-bY3">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="g0F-EW-kxs"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="g0F-EW-kxs">
+                            <connections>
+                                <action selector="saveTapped:" destination="Uml-fU-2yA" id="y8s-rQ-HiY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="odg-B8-l6H" id="OHQ-eR-TjH"/>
+                        <outlet property="experienceTitleTextField" destination="1KD-TR-rXO" id="8jw-Kl-NSU"/>
+                        <outlet property="imageView" destination="saR-rV-Lg4" id="606-Fh-XYY"/>
+                        <outlet property="recordAudioButton" destination="u4U-OG-YhQ" id="Rzy-tu-eZi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Me-3b-3pW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224.6376811594205" y="125.89285714285714"/>
+            <point key="canvasLocation" x="2229" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xNY-Bm-YIy">
